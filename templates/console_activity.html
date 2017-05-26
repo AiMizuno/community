@@ -1,0 +1,57 @@
+{% extends 'console_base.html' %}
+
+{% block title %}青年志愿者协会{% endblock %}
+
+{% block content %}
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <button data-toggle="modal" data-target="#create_activity" class="btn btn-hg btn-primary">
+            发布活动
+        </button>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>名称</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for activity in activities%}
+                    <tr>
+                        <td>
+                            {{activity.name}}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="modal fade" id="create_activity" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="create_activityLabel">
+                        创建活动
+                    </h4>
+                </div>
+                <form class="form-horizontal" role="form" acenctype="multipart/form-data" method="post">
+                    <div class="modal-body">
+                        {% csrf_token %}
+                        {{ af.as_p }}
+                    </div>
+                    <div class="modal-footer">
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" name="login" class="btn btn-default">创建</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}活动{% endblock %}
+
+{% block content %}
+    <div class="col-md-8 col-md-offset-2">
+        <div class="thumbnail">
+            <table><tr><th>活动名</th><th>时间</th><th>地点</th></tr>
+                {% for activity in activities%}
+                    <tr>
+                        <td>
+                            {{activity.name}}
+                        </td>
+                        <td>
+                            {{activity.datetime}}
+                        </td>
+                        <td>
+                            {{activity.address}}
+                        </td>
+                        <td>
+                            <a href="/attend_activity/{{activity.name}}">参加</a></tr>
+                    </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock %}

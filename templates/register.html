@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
+        <p>建议账户与学号一致</p>
+        {% csrf_token %}
+        {{ rf.as_p }}
+         <button type="submit" name="regist" class="btn btn-default">注册</button>
+    </form>
+</body>
+</html>

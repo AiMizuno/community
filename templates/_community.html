@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}社团{% endblock %}
+
+{% block content %}
+    <div class="col-md-8 col-md-offset-2">
+        <div class="thumbnail">
+            <table><tr><th>社团名字</th></tr>
+                {% for community in communities%}
+                    <tr>
+                        <td>
+                            {{community.community_name}}
+                        </td>
+
+                        <td>
+                            <a href={% url "homepage" Community_name=community.name%}>主页</a></tr>
+                    </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock %}

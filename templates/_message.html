@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}个人中心{% endblock %}
+
+{% block content %}
+<div class="col-md-8 col-md-offset-2">
+    <div class="thumbnail">
+        <table border="1">
+            <caption align="top">发给我的通知</caption>
+            <tr><th>发件方</th><th>接收方</th><th>内容</th></tr>
+            {% for message in gets %}
+            <tr>
+                <td>
+                    {{message.sender}}
+                </td>
+                <td>
+                    {{message.acceptor}}
+                </td>
+                <td>
+                    {{message.content}}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div>
+            <br>
+        </div>
+        <table border="1">
+            <caption align="top">我发出的通知</caption>
+            <tr><th>发件方</th><th>接收方</th><th>内容</th></tr>
+            {% for inform in sends %}
+            <tr>
+                <td>
+                    {{message.sender}}
+                </td>
+                <td>
+                    {{message.acceptor}}
+                </td>
+                <td>
+                    {{message.content}}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}
+

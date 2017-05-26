@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}发送消息{% endblock %}
+
+{% block content %}
+<div class="col-md-8 col-md-offset-2">
+    <div class="thumbnail">
+        <form method="post" action="/send_inform">
+            {%csrf_token%}
+            {{form.as_p}}
+            <button type="submit" name="send_inform" class="btn btn-default">通知</button>
+        </form>
+    </div>
+</div>*
+{% endblock %}

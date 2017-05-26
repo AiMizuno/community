@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-sm-3 col-md-2 sidebar">
+        <ul class="nav nav-sidebar">
+            <li><a href={% url "community_console" Community_name=community.name %}>总览 <span class="sr-only">(current)</span></a></li>
+            <li><a href={% url "community_activity" Community_name=community.name %}>活动</a></li>
+            <li><a href={% url "community_twit" Community_name=community.name %}>推文(短文章)</a></li>
+            <li><a href={% url "community_blog" Community_name=community.name %}>文章(长文章)</a></li>
+            <li><a href= >通知</a></li>
+            <li><a href= {% url "community_member" Community_name=community.name %}>成员</a></li>
+        </ul>
+        <ul class="nav nav-sidebar">
+            <li><a href={% url "homepage" Community_name=community.name %}>社团主页</a></li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}个人中心{% endblock %}
+
+{% block content %}
+<div class="col-md-8 col-md-offset-2">
+    <div class="thumbnail">
+        <form method="post" action="">
+            <p>邮箱:{{ user.email }}</p>
+            <p>昵称:<input type="text" name="name" value="{{ user.username }}"></p>
+            <p>姓名:<input type="text" name="username" value="{{ profile.realname }}"></p>
+            <p>学院:<input type="text" name="college" value="{{ profile.college }}"></p>
+            <p>专业:<input type="text" name="major" value="{{ profile.major}}"></p>
+            <p>学号:<input type="text" name="IDnum" value="{{ profile.IDnum }}"></p>
+            <p>性别:{{ profile.get_sex_display }}</p>
+            <button class="btn btn-default" type="submit" value="submit">修改</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+

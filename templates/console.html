@@ -1,0 +1,59 @@
+{% extends 'console_base.html' %}
+
+{% block title %} 总览——{{ community.community_name }}{% endblock %}
+
+{% block content %}
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <div class="row placeholders">
+            <div class="col-xs-6 col-sm-4 placeholder">
+                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                <h4>活动</h4>
+            </div>
+            <div class="col-xs-6 col-sm-4 placeholder">
+                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                <h4>推文</h4>
+            </div>
+            <div class="col-xs-6 col-sm-4 placeholder">
+                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                <h4>成员</h4>
+            </div>
+        </div>
+        <h2 class="sub-header">社团组</h2>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>名称</th>
+                    <th>负责人</th>
+                    <th>联系方式</th>
+                    <th>职责</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>主席团</td>
+                    <td>张三</td>
+                    <td>略</td>
+                    <td>统筹组织</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>秘书部</td>
+                    <td>李四</td>
+                    <td>略</td>
+                    <td>记录消息</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>XX活动策划小组</td>
+                    <td>王二</td>
+                    <td>略</td>
+                    <td>负责XX活动</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

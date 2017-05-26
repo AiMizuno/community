@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for Table in Tables %}
+    <div>
+        <h3>{{ Table.name }}</h3>
+        {% for Col in Cols %}
+            {% if Col.table_ID == Table %}
+                <h4>{{ Col.name }}</h4>
+                {% for Value in Values %}
+                    {% if Value.Table == Table %}
+                        {% if Col.field_Num == 0 %}
+                            <p>{{ Value.value0 }}</p>
+                        {% endif %}
+                        {% if Col.field_Num == 1 %}
+                            <p>{{ Value.value1 }}</p>
+                        {% endif %}
+                        {% if Col.field_Num == 2 %}
+                            <p>{{ Value.value2 }}</p>
+                        {% endif %}
+                        {% if Col.field_Num == 3 %}
+                            <p>{{ Value.value3 }}</p>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endfor %}
+</body>
+</html>

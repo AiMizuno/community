@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}查看同伴{% endblock %}
+
+
+{% block content %}
+<div class="col-md-8 col-md-offset-2">
+    <div class="thumbnail">
+        <table><tr><th>姓名</th><th>学号</th><th></th></tr>
+            {% for user in userlist %}
+            <tr>
+                <td>
+                    {{user.username}}
+                </td>
+                <td>
+                    {{user.account.IDnum}}
+                </td>
+                <td>
+                    <a href="/send_inform/{{user.IDnum}}">发送通知</a></tr>
+            </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}
